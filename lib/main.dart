@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:laundry_ui/pages/dashboard.dart';
+import 'package:laundry_ui/pages/home.dart';
 import 'package:laundry_ui/pages/login.dart';
+import 'package:laundry_ui/pages/single_order.dart';
 import 'package:laundry_ui/utils/constants.dart';
-
-import 'pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +14,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(375, 812),
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
-          title: "Laundry App",
+          title: 'Laundry App',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             scaffoldBackgroundColor: Constants.scaffoldBackgroundColor,
@@ -36,17 +38,25 @@ class MyApp extends StatelessWidget {
 
 Route<dynamic> _onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case '/':
+    case "/":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return const Home();
+        return Home();
       });
     case "/login":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return const Login();
+        return Login();
+      });
+    case "/dashboard":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return Dashboard();
+      });
+    case "/single-order":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return SingleOrder();
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {
-        return const Home();
+        return Home();
       });
   }
 }

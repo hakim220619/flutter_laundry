@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:laundry_ui/utils/constants.dart';
+import '../utils/constants.dart';
 
 enum ButtonType { PRIMARY, PLAIN }
 
@@ -10,11 +10,8 @@ class AppButton extends StatelessWidget {
   final ButtonType type;
   final VoidCallback onPressed;
   final String text;
-  const AppButton(
-      {required this.type,
-      required this.onPressed,
-      required this.text,
-      super.key});
+
+  AppButton({required this.type, required this.onPressed, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +23,25 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: getButtonColor(type),
           borderRadius: BorderRadius.circular(8.0),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-                color: Color.fromRGBO(169, 176, 185, 0.42),
-                spreadRadius: 0,
-                blurRadius: 8.0,
-                offset: Offset(0, 2))
+              color: Color.fromRGBO(169, 176, 185, 0.42),
+              spreadRadius: 0,
+              blurRadius: 8.0,
+              offset: Offset(0, 2),
+            )
           ],
         ),
         child: Center(
-            child: Text(
-          this.text,
-          style: GoogleFonts.roboto(
+          child: Text(
+            this.text,
+            style: GoogleFonts.roboto(
               color: getTextColor(type),
               fontSize: 16.0,
-              fontWeight: FontWeight.w500),
-        )),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
       ),
     );
   }
