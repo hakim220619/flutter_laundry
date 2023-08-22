@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:laundry_ui/pages/login.dart';
 import 'package:laundry_ui/utils/constants.dart';
 
 import 'pages/home.dart';
@@ -39,11 +38,15 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case '/':
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Home();
+        return const Home();
+      });
+    case "/login":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return const Login();
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Home();
+        return const Home();
       });
   }
 }
