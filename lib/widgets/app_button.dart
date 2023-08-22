@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/constants.dart';
 
+// ignore: constant_identifier_names
 enum ButtonType { PRIMARY, PLAIN }
 
 class AppButton extends StatelessWidget {
@@ -16,14 +17,14 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: this.onPressed,
+      onTap: onPressed,
       child: Container(
         width: double.infinity,
         height: ScreenUtil().setHeight(48.0),
         decoration: BoxDecoration(
           color: getButtonColor(type),
           borderRadius: BorderRadius.circular(8.0),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color.fromRGBO(169, 176, 185, 0.42),
               spreadRadius: 0,
@@ -34,7 +35,7 @@ class AppButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            this.text,
+            text,
             style: GoogleFonts.roboto(
               color: getTextColor(type),
               fontSize: 16.0,

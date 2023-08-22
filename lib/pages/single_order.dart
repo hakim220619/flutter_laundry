@@ -235,7 +235,8 @@ Widget getSubtotalRow(String title, String price) {
         Text(
           price,
           style:
-              TextStyle(color: Color.fromRGBO(74, 77, 84, 1), fontSize: 15.0),
+              const TextStyle(
+              color: Color.fromRGBO(74, 77, 84, 1), fontSize: 15.0),
         )
       ],
     ),
@@ -244,12 +245,12 @@ Widget getSubtotalRow(String title, String price) {
 
 Widget getItemRow(String count, String item, String price) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 8.0),
+    padding: const EdgeInsets.only(bottom: 8.0),
     child: Row(
       children: [
         Text(
           count,
-          style: TextStyle(
+          style: const TextStyle(
               color: Color.fromRGBO(74, 77, 84, 1),
               fontSize: 15.0,
               fontWeight: FontWeight.w600),
@@ -257,14 +258,15 @@ Widget getItemRow(String count, String item, String price) {
         Expanded(
           child: Text(
             "x $item",
-            style: TextStyle(
+            style: const TextStyle(
                 color: Color.fromRGBO(143, 148, 162, 1), fontSize: 15.0),
           ),
         ),
         Text(
           price,
           style:
-              TextStyle(color: Color.fromRGBO(74, 77, 84, 1), fontSize: 15.0),
+              const TextStyle(
+              color: Color.fromRGBO(74, 77, 84, 1), fontSize: 15.0),
         )
       ],
     ),

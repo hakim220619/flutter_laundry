@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
           title: 'Laundry App',
@@ -40,23 +40,23 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case "/":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Home();
+        return const Home();
       });
     case "/login":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Login();
+        return const Login();
       });
     case "/dashboard":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Dashboard();
+        return const Dashboard();
       });
     case "/single-order":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return SingleOrder();
+        return const SingleOrder();
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {
-        return Home();
+        return const Home();
       });
   }
 }
